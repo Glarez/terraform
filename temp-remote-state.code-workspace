@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../temp-remote-state"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
