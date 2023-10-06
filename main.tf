@@ -1,5 +1,5 @@
 provider "aws" {
-    region = "us-west-2"
+    region = var.region
 }
 
 // VARIABLES
@@ -16,6 +16,12 @@ variable "priv-subnet-1" {
 variable "environment" {
   description = "Environment tags"
   default = "test-use"  
+}
+
+variable "region" {
+  description = "Resource's region"
+  default = "us-east-1"
+  
 }
 
 // RESOURCES
