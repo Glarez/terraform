@@ -52,6 +52,19 @@ Go to https://app.terraform.io
 
 ### Go for api driven workflow.
 <img src="images\TFCOrganizationWorkspace3.png" alt="image"/>
+
+### Now we have our backend configuration to manage resources in our organization.
+
+        terraform {
+        cloud {
+            organization = "Zapalaver"
+
+            workspaces {
+            name = "zapalaver-dev"
+            }
+          }
+        }
+
 <img src="images\TFCOrganizationWorkspace4.png" alt="image"/>
 
 ### 2. Add environment variables.
