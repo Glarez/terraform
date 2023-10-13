@@ -1,8 +1,8 @@
-[gh_logo](images\github-tf-logos.png)
+<img src="images\github-tf-logos.png" alt="gh_logo" />
 
 # Terraform cicd using Github Actions and Terraform cloud (TFC).
 
-[workflow](images\workflow.png)
+![workflow](images\workflow.png)
 
 After a PR or a push to master branch in github happens, the git hub workflow generates a terraform run in TFC workspace to deploy resources y the defined AWS account.
 
@@ -45,13 +45,13 @@ Go to https://app.terraform.io
 
 ### 1. Create a TFC Organization and Workspace.
 
-[workflow](images\TFCOrganizationWorkspace.png)
-[workflow](images\TFCOrganizationWorkspace2.png)
-[workflow](images\TFCOrganizationWorkspace3.png)
-[workflow](images\TFCOrganizationWorkspace4.png)
+![workflow](images\TFCOrganizationWorkspace.png)
+![workflow](images\TFCOrganizationWorkspace2.png)
+![workflow](images\TFCOrganizationWorkspace3.png)
+![workflow](images\TFCOrganizationWorkspace4.png)
 
 ### 2. Add environment variables.
 
 #### Add your aws credentials in your workspace.
 
-[workflow](images\AddEnvironmentVariables.png)
+![workflow](images\AddEnvironmentVariables.png)
