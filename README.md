@@ -26,10 +26,32 @@ The resources generated in the demo would be a single nginx webserver using an e
 ___
 ## Objectives
 
-- TFC setup.
-- Github repository setup for tfc.
-- Actions workflow.
-- Creating and merging pull requests for demo.
-- Verify the provisioned resources.
+1. TFC setup.
+2. Github repository setup for tfc.
+3. Actions workflow.
+4. Creating and merging pull requests for demo.
+5. Verify the provisioned resources.
 ___
 
+## TFC setup
+
+Go to https://app.terraform.io
+
+1. Create a TFC Organization and Workspace.
+2. Add environment variables.
+3. Create an API token.
+4. Save the token for Github config part.
+
+
+### 1. Create a TFC Organization and Workspace.
+
+![workflow](images\TFCOrganizationWorkspace.png)
+![workflow](images\TFCOrganizationWorkspace2.png)
+![workflow](images\TFCOrganizationWorkspace3.png)
+![workflow](images\TFCOrganizationWorkspace4.png)
+
+### 2. Add environment variables.
+
+#### Add your aws credentials in your workspace.
+
+![workflow](images\AddEnvironmentVariables.png)
