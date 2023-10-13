@@ -46,6 +46,8 @@ Go to https://app.terraform.io
 ### 1. Create a TFC Organization and Workspace.
 
 <img src="images\TFCOrganizationWorkspace.png" alt="image"/>
+
+### Name your Organization
 <img src="images\TFCOrganizationWorkspace2.png" alt="image"/>
 <img src="images\TFCOrganizationWorkspace3.png" alt="image"/>
 <img src="images\TFCOrganizationWorkspace4.png" alt="image"/>
