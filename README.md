@@ -47,8 +47,10 @@ Go to https://app.terraform.io
 
 <img src="images\TFCOrganizationWorkspace.png" alt="image"/>
 
-### Name your Organization
+### Name your Organization.
 <img src="images\TFCOrganizationWorkspace2.png" alt="image"/>
+
+### Go for api driven workflow.
 <img src="images\TFCOrganizationWorkspace3.png" alt="image"/>
 <img src="images\TFCOrganizationWorkspace4.png" alt="image"/>
 
