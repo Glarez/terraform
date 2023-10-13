@@ -55,3 +55,15 @@ Go to https://app.terraform.io
 #### Add your aws credentials in your workspace.
 
 <img src="images\AddEnvironmentVariables.png" alt="image"/>
+
+### 3. Create an API token.
+
+#### Under your user pic, go to your setting for generating the token to be configured in github later.
+
+<img src="images\TFCApiToken.png" alt="image"/>
+<img src="images\TFCApiToken2.png" alt="image"/>
+<img src="images\TFCApiToken3.png" alt="image"/>
+
+#### Remember to save the token as you will need it when configuring github to comunicate with TFC.
+
+<img src="images\TFCApiToken4.png" alt="image"/>
