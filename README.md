@@ -27,7 +27,7 @@ ___
 ## Objectives
 
 1. TFC setup.
-2. Github repository setup for tfc.
+2. Github repository setup for TFC.
 3. Actions workflow.
 4. Creating and merging pull requests for demo.
 5. Verify the provisioned resources.
@@ -84,3 +84,32 @@ Go to https://app.terraform.io
 #### Remember to save the token as you will need it when configuring github to comunicate with TFC.
 
 <img src="images\TFCApiToken4.png" alt="image"/>
+
+## Github repository setup for TFC.
+
+1. Fork this repo.
+2. Create a new secret named TF_API_TOKEN.
+3. Use TFC API token that you created in step 3. 
+
+### 1. Fork this repo.
+
+#### If you want to make use of mi TF code, just fork the repo but, if you want to write your own, go ahead and mind the backend configuration that you'll need to modify later.
+
+### 2. Create a new secret named TF_API_TOKEN
+
+<img src="images\githubConfig.png" alt="image"/>
+
+### 3. Use TFC API token that you created in step 3.
+
+#### . Create a workflow for terraform deploy:
+
+`.github/workflow/terraform.yml`
+
+
+## Using the workflow
+
+1. Create a new branch called update-tfc-backend.
+2. Update the providers.tf file.
+3. Add, commit and push your changes.
+4. Review and merge the pull request.
+

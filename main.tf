@@ -1,65 +1,28 @@
 provider "aws" {
-    region = var.region
-}
-
-// VARIABLES
-variable "test-vpc" {
-  description = "VPC cidr"
-  default = "10.0.0.0/16"
-}
-
-variable "priv-subnet-1" {
-  description = "Subnet cidr"  
-  default = "10.0.10.0/24"
-}
-
-variable "environment" {
-  description = "Environment tags"
-  default = "test-use"  
-}
-
-variable "region" {
-  description = "Resource's region"
-  default = "us-east-1"
-  
+    region = "us-east-1"
 }
 
 // RESOURCES
-resource "aws_vpc" "test-vpc" {
-    cidr_block = var.test-vpc
-    tags = {
-      "Name" = "test-app",
-      "Environment" = var.environment
-    }
+resource "random_pet" "sg" {}
+
+resource "aws_instance" "web" {
+  ami                    = "ami-09e67e426f25ce0d7"
+  instance_type          = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.web-sg.id]
+
+  user_data = <<-EOF
+              #!/bin/bash
+              echo "Hello, World" > index.html
+              nohup busybox httpd -f -p 8080 &
+              EOF
 }
 
-resource "aws_subnet" "priv-subnet-1" {
-  vpc_id = aws_vpc.test-vpc.id
-  cidr_block = var.priv-subnet-1
-  availability_zone = "us-west-2a"
-    tags = {
-      "Name" = "test-app",
-      "Environment" = var.environment
-    }
-}
-
-// OUTPUTS
-output "test-vpc-id" {
-  description = "VPC ID"
-  value = aws_vpc.test-vpc.id
-}
-
-output "test-vpc-cidr" {
-  description = "VPC CIDR"
-  value = aws_vpc.test-vpc.cidr_block
-}
-
-output "priv-subnet-1-id" {
-  description = "SUBNET ID"
-  value = aws_subnet.priv-subnet-1.id
-}
-
-output "priv-subnet-1-cidr" {
-  description = "SUBNET CIDR"
-  value = aws_subnet.priv-subnet-1.cidr_block
+resource "aws_security_group" "web-sg" {
+  name = "${random_pet.sg.id}-sg"
+  ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
