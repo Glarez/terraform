@@ -8,11 +8,11 @@ terraform {
   
   required_version = ">= 1.5.0"
 
-  /*backend "remote" {
+  backend "remote" {
     organization = "Zapalaver"
 
     workspaces {
       name = "zapalaver-dev"
     }    
-  }*/  
+  }  
 }
