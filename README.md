@@ -108,8 +108,42 @@ Go to https://app.terraform.io
 
 ## Using the workflow
 
-1. Create a new branch called update-tfc-backend.
+1. Create a new branch called cicd-tf-cloud.
 2. Update the providers.tf file.
 3. Add, commit and push your changes.
 4. Review and merge the pull request.
+
+### 1. Create a new branch called cicd-tf-cloud.
+
+`git switch -C cicd-tf-cloud`
+
+### 2. Update the providers.tf file.
+
+Use this block inside provider.tf file to make use of the new workspace in TFC.
+
+    terraform {
+      required_providers {
+        aws = {
+          source  = "hashicorp/aws"
+          version = "3.26.0"
+        }
+        random = {
+          source  = "hashicorp/random"
+          version = "3.0.1"
+        }
+      }
+      required_version = "~> 1.0"
+
+      backend "remote" {
+      organization = "Zapalaver"
+      workspaces {
+        name = "zapalaver-dev"
+        }    
+      }
+    }
+
+
+    provider "aws" {
+      region = "us-east-1"
+    }
 
