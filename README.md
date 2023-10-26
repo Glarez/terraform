@@ -113,3 +113,76 @@ Go to https://app.terraform.io
 3. Add, commit and push your changes.
 4. Review and merge the pull request.
 
+### 1. Create a new branch called update-tfc-backend.
+
+`git switch -C update-tfc-backend`
+
+### 2. Update the providers.tf file.
+
+Make use of the block:
+
+    backend "remote" {
+        organization = "Zapalaver"
+
+        workspaces {
+          name = "zapalaver-dev"
+        }
+      }
+
+your providers.tf would be like:
+
+    terraform {
+      required_providers {
+        aws = {
+          source  = "hashicorp/aws"
+          version = "3.26.0"
+        }
+        random = {
+          source  = "hashicorp/random"
+          version = "3.0.1"
+        }
+      }
+      required_version = "~> 1.0"
+
+      backend "remote" {
+        organization = "Zapalaver"
+
+        workspaces {
+          name = "zapalaver-dev"
+        }
+      }
+    }
+
+
+    provider "aws" {
+      region = "us-east-1"
+    }
+
+
+### 3. Add, commit and push your changes.
+
+`git add --all && git commit -m "enabled TFC backend" && git push`
+
+### 4. 4. Review and merge the pull request.
+
+<img src="images\merge1.png" alt="image"/>
+
+A run will start triggering the plan and deploy on TFC 
+
+<img src="images\merge2.png" alt="image"/>
+
+
+### Check and destroy resources for cleaning TFC.
+
+<img src="images\check_ and_destroy1.png" alt="image"/>
+
+#### Grab the putput and use curl or a browser to chek the instance is ok.
+
+<img src="images\check_ and_destroy2.png" alt="image"/>
+
+#### Queue a destroy plan from TFC to delete resources and clean the remote state
+
+<img src="images\check_ and_destroy3.png" alt="image"/>
+
+<img src="images\check_ and_destroy4.png" alt="image"/>
+
