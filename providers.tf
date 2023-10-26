@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "Zapalaver"
+    organization = "REPLACE"
 
     workspaces {
-      name = "zapalaver-dev"
+      name = "REPLACE"
     }
   }
 }
