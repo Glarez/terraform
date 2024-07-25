@@ -16,7 +16,6 @@ After a PR or a push to master branch in github happens, the git hub workflow ge
 The resources generated in the demo would be a single nginx webserver using an ec2 instance.
 
 
-
 ## Requisites:
 
 - Github account.
@@ -104,7 +103,6 @@ Go to https://app.terraform.io
 #### . Create a workflow for terraform deploy:
 
 `.github/workflow/terraform.yml`
-
 
 ## Using the workflow
 
