@@ -15,7 +15,7 @@ terraform {
     organization = "Zapalaver"
 
     workspaces {
-      name = "zapalaver-dev"
+      name =    "zapalaver-dev"
     }
   }
 }

@@ -1,4 +1,4 @@
-name: "Terraform"
+name: "Terraform plan / apply"
 
 on:
   push:

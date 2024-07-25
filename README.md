@@ -183,4 +183,3 @@ A run will start triggering the plan and deploy on TFC
 <img src="images\check_ and_destroy3.png" alt="image"/>
 
 <img src="images\check_ and_destroy4.png" alt="image"/>
-
