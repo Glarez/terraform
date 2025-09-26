@@ -14,8 +14,9 @@ terraform {
   backend "remote" {
     organization = "Zapalaver"
     workspaces {
+      name = "terraform-github"
     }
-    name = "terraform-github"
+
   }
 }
 
