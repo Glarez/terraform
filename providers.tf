@@ -11,11 +11,11 @@ terraform {
   }
   required_version = "~> 1.13"
 
-   backend "remote" {
-    organization    = "Zapalaver"
-   workspaces {
+  backend "remote" {
+    organization = "Zapalaver"
+    workspaces {
     }
-      name = "terraform-github"
+    name = "terraform-github"
   }
 }
 
